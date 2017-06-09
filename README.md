@@ -8,7 +8,7 @@ les autres en explication ci-dessous
 ## Sommaire
 
    1. [setInterval](#setInterval) Répétition d'évenement
-   1. [Network](#network) Des outils pour le réseaux
+   1. [](#) Rien
    
 ## setInterval
    Je l'utilise quand j'ai besoin de répéter du code tout les `X` secondes,
