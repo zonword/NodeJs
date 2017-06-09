@@ -2,11 +2,8 @@ var _fd, _fichier = null
 
 function Main(dir, file){
   
-  if(file != null){
-    _fichier = path.join(dir, file)
-  }else{
-    _fichier = dir
-  }
+  if(file != null){ _fichier = path.join(dir, file) }
+  else{ _fichier = dir }
   
   return new Promise( (resolve,reject) => {
     try {
@@ -14,9 +11,8 @@ function Main(dir, file){
       fs.closeSync(_fd)
       resolve(_fichier)
     } catch(err) { 
-      if (err.code == "EBUSY") {
-        reject(`Non accessible, fichier utilisé par un autre processeur`)
-      }
+      if (err.code == "EBUSY") { reject(`Non accessible, fichier utilisé par un autre processus`) } 
+      else { reject(err) }
     }
   })
 }
