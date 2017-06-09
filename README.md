@@ -20,7 +20,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    petit truc en plus c'est que défois l'evenement n'est pas terminé, et il relance une autre événement
    donc je detruit la boucle d'evenement dans celle-ci, et la réactive en fin
    
-   `setInterval` est une fonction qui je trouve remplace le `fs.watch` car je le trouve instable, instable sur certaine système d'exploitation, et ne l'ais pas gérer pareil non plus, sous unix il utilise inotify, max os `...` et windows `...` et une fois implémenté dans notre code, il faut savoir quel type d'evenement agir, et ensuite différencier le type si c'est un fichier ou un dossier etc
+   `setInterval` est une fonction qui je trouve remplace le `fs.watch` car je le trouve instable, instable sur certaine système d'exploitation, et ne l'est pas géré pareil non plus, sous unix il utilise inotify, max os `...` et windows `...` et une fois implémenté dans notre code, il faut savoir quel type d'evenement agir, et ensuite différencier le type si c'est un fichier ou un dossier etc
    
 ```javascript
 var _myXtime    = 4000
