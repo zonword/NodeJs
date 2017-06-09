@@ -20,6 +20,8 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    petit truc en plus c'est que défois l'evenement n'est pas terminé, et il relance une autre événement
    donc je detruit la boucle d'evenement dans celle-ci, et la réactive en fin
    
+   `setInterval` avec cette methode remplace pour moi le `fs.watch` car je le trouve instable, et une fois gèrer il faut ensuite gérer le type d'evenement
+   
 ```javascript
 var _myXtime    = 4000
 var _myinterval = null
