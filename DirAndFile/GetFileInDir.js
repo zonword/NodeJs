@@ -1,11 +1,10 @@
 var _fd, _fichier = null
 
 function Main(dir, file){
-  
-  if(file != null){ _fichier = path.join(dir, file) }
-  else{ _fichier = dir }
-  
   return new Promise( (resolve,reject) => {
+    if(file != null){ _fichier = path.join(dir, file) }
+    else{ _fichier = dir }
+  
     try {
       _fd = fs.openSync(_fichier, 'r+')
       fs.closeSync(_fd)
