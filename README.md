@@ -3,7 +3,12 @@
 *Du code que je réutilise souvent sont dans ce depot*
 
 Les codes qui ne mérite aucune explication sont disponible dans le depot
-les autres en explication ci-dessous
+les autres code que je juge important à savoir sont en explication ci-dessous
+
+## Remarque
+
+NodeJs est très facile à manipuler, mais on peut vite être dépassé si on est pas rigoureux, en PHP le code est li ligne par ligne
+Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à exécuter, qui seras éxécuté en premier, donc les promises et les callbacks sont indispensable
 
 ## Sommaire
 
