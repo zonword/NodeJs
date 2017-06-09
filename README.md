@@ -30,6 +30,7 @@ function MyMainEvent(){
     if(!err){
       setTimeout( () => {
         console.log(`Hello World`)
+        MyFuncInterval(true)
       }, time)
     }
   })
