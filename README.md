@@ -17,10 +17,11 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    
 ## setInterval
    Je l'utilise quand j'ai besoin de répéter du code tout les `X` secondes,
-   petit truc en plus c'est que défois l'evenement n'est pas terminé, et il relance une autre événement
-   donc je detruit la boucle d'evenement dans celle-ci, et la réactive en fin
+   petit detail à savoir c'est que quand le premier evenement n'est pas terminé, 
+   il faut pouvoir empecher l'evement suivant d'être déclanché,
+   pour cela il faut détruite la boucle d'evenement dans celle-ci, et la réactiver en fin d'evenement
    
-   `setInterval` est une fonction qui je trouve remplace le `fs.watch` car je le trouve instable, instable sur certaine système d'exploitation, et ne l'est pas géré pareil non plus, sous unix il utilise inotify, max os `...` et windows `...` et une fois implémenté dans notre code, il faut savoir quel type d'evenement agir, et ensuite différencier le type si c'est un fichier ou un dossier etc
+   `setInterval` remplace pour le `fs.watch` car je le trouve instable, et il n'est pas géré pareil sur chaque OS, sous unix il utilise inotify, MacOs utilise `...` et windows `...` et une fois implémenté dans notre code, il faut filtrer sur le type d'evenement qu'on veut agir `rename`,... et enfin récuperer sur ce qu'on a besoin un `fichier` ou un `dossier`
    
 ```javascript
 var _myXtime    = 4000
