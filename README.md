@@ -12,9 +12,35 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
 
 ## Sommaire
 
+   1. [Boucle](#boucle) Creer une boucle
    1. [setInterval](#setInterval) Répétition d'évenement
    1. [](#) Rien
+
+## Boucle
+   Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite une explication
    
+```javascript
+var _entreprise = []
+var _personnes  = ["patron","secretaire","employé","interim"]
+
+var _personne
+
+function _Add(unepersonne) {
+   return new Promise( resolve => resolve(_entreprise.push(unepersonne)) )
+}
+
+function Boucle(){
+  return new Promise ( (resolve) => {
+     for(var i = 0; i < _personnes.length; i++){
+        _personne = _personnes[i]
+        _Add(_personne).then(res => resolve(_entreprise))
+     }
+  })
+}
+
+Boucle().then( listes => console.log(listes) )
+```
+
 ## setInterval
    Je l'utilise quand j'ai besoin de répéter du code tout les `X` secondes,
    petit detail à savoir c'est que quand le premier evenement n'est pas terminé, 
