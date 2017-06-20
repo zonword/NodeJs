@@ -14,7 +14,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
 
    1. [Boucle](#boucle) Creer une boucle
    1. [setInterval](#setInterval) Répétition d'évenement
-   1. [](#) Rien
+   1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
 
 ## Boucle
    Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite son petit paragraphe ici, je vous laisse faire les debug qu'il faut pour comprendre pourquoi la promesse est rendu à l'interieur de la boucle, et non à l'extérieur
@@ -71,4 +71,20 @@ function MyFuncInterval(flag){
 }
 
 MyFuncInterval(true)
+```
+
+## ArrayJson
+   Voici une façon peut connu pour atteindre des donnée d'un tableau JSON [source](https://blog.heroku.com/node-habits-2017#3-modernize-your-javascript)
+   
+   ```javascript
+const combinations = [
+  { number: "8.0.0", platform: "linux-x64" },
+  { number: "8.0.0", platform: "darwin-x64" },
+  { number: "7.9.0", platform: "linux-x64" },
+  { number: "7.9.0", platform: "darwin-x64" }
+];
+
+for (let { number, platform } of combinations) {
+  console.log(`node-v${number}-${platform}.tar.gz`);
+}
 ```
