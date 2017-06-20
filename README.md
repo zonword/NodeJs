@@ -52,24 +52,21 @@ var _myinterval = null
 
 function MyMainEvent(){
   let time = _myXtime * 3
-  MyFuncInterval(false, (err,clear) => {
-    if(!err){
-      setTimeout( () => {
-        console.log(`Hello World`)
-        MyFuncInterval(true)
-      }, time)
-    }
-  })
+  MyFuncInterval(false)
+	.then( clear => {
+		setTimeout( () => {
+			console.log(`Hello World`)
+			MyFuncInterval(true)
+		}, time)
+	})
 }
 
-function MyFuncInterval(flag,cb){
-  if(flag == false && cb){
-    cb(null,clearInterval(_myinterval))
+function MyFuncInterval(flag){
+  if(flag == false){
+	return new Promise( (resolve) => { resolve( clearInterval(_myinterval) ) })
   }
   if(flag == true){
-    _myinterval = setInterval( () => {
-       MyMainEvent()
-    }, _myXtime)
+    _myinterval = setInterval( () => MyMainEvent(), _myXtime)
   }
 }
 
