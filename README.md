@@ -13,6 +13,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
 ## Sommaire
 
    1. [Boucle](#boucle) Creer une boucle
+   1. [Boucle Avec Condition](#boucle-avec-condition) Une boucle avec condition
    1. [setInterval](#setInterval) Répétition d'évenement
    1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
 
@@ -29,13 +30,30 @@ function _Add(unepersonne) {
 
 function Boucle(){
   return new Promise ( (resolve) => {
-     for(var i = 0; i < _personnes.length; i++){
+     for(var i in _personnes){
         _Add(_personnes[i]).then(res => resolve(_entreprise))
      }
   })
 }
 
 Boucle().then( listes => console.log(listes) )
+```
+
+## Boucle Avec Condition
+   Parcourir un tableau avec des controles dans celle-ci ce fait uniquement de cette manière, si vous avez du code ecris sous cette forme `for(var i = 0; i<files.length; i++)` c'est parfait pour du language synchrone mais par defaut javascript est asynchrone
+   
+```javascript
+var _personnes  = ["patron","secretaire","employé","interim"]
+
+function loop(tableau){
+   var res = false
+   for(var i in tableau){
+      if(tableau[i] == "interim") { res = true } 			
+   }
+   return new Promise( resolve => resolve(res) )
+}
+
+loop(_personnes).then( tableau => console.log(tableau) )
 ```
 
 ## setInterval
