@@ -53,20 +53,20 @@ var _myinterval = null
 function MyMainEvent(){
   let time = _myXtime * 3
   MyFuncInterval(false)
-	.then( clear => {
-		setTimeout( () => {
-			console.log(`Hello World`)
-			MyFuncInterval(true)
-		}, time)
-	})
+     .then( clear => {
+        setTimeout( () => {
+	   console.log(`Hello World`)
+	   MyFuncInterval(true)
+	}, time)
+     })
 }
 
 function MyFuncInterval(flag){
   if(flag == false){
-	return new Promise( (resolve) => { resolve( clearInterval(_myinterval) ) })
+     return new Promise( (resolve) => { resolve( clearInterval(_myinterval) ) })
   }
   if(flag == true){
-    _myinterval = setInterval( () => MyMainEvent(), _myXtime)
+     _myinterval = setInterval( () => MyMainEvent(), _myXtime)
   }
 }
 
@@ -78,13 +78,13 @@ MyFuncInterval(true)
    
    ```javascript
 const combinations = [
-  { number: "8.0.0", platform: "linux-x64" },
-  { number: "8.0.0", platform: "darwin-x64" },
-  { number: "7.9.0", platform: "linux-x64" },
-  { number: "7.9.0", platform: "darwin-x64" }
+   { number: "8.0.0", platform: "linux-x64" },
+   { number: "8.0.0", platform: "darwin-x64" },
+   { number: "7.9.0", platform: "linux-x64" },
+   { number: "7.9.0", platform: "darwin-x64" }
 ];
 
 for (let { number, platform } of combinations) {
-  console.log(`node-v${number}-${platform}.tar.gz`);
+   console.log(`node-v${number}-${platform}.tar.gz`);
 }
 ```
