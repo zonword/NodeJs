@@ -81,7 +81,7 @@ function MyMainEvent(){
 
 function MyFuncInterval(flag){
   if(flag == false){
-     return new Promise( (resolve) => { resolve( clearInterval(_myinterval) ) })
+     return new Promise( resolve => resolve(clearInterval(_myinterval)))
   }
   if(flag == true){
      _myinterval = setInterval( () => MyMainEvent(), _myXtime)
