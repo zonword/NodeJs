@@ -16,8 +16,9 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    1. [Boucle Avec Condition](#boucle-avec-condition) Une boucle avec condition
    1. [setInterval](#setInterval) Répétition d'évenement
    1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
-   1. [Nodemon](#nodemon) Nodemon
+   1. [respawn](https://github.com/mafintosh/respawn) Permet de se relancer a l'interieur de son programme à la fin d'un traitement
    1. [Mirror Folder](https://github.com/mafintosh/mirror-folder) Permet de réaliser de la sauvegarde en automatique d'un dossier
+   1. [Why is node running](https://github.com/mafintosh/why-is-node-running) savoir ce qu'un programme node fait
 
 ## Boucle
    Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite son petit paragraphe ici, je vous laisse faire les debug qu'il faut pour comprendre pourquoi la promesse est rendu à l'interieur de la boucle, et non à l'extérieur
