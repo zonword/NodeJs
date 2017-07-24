@@ -24,6 +24,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    1. [airscreen](https://github.com/mafintosh/airscreen) génère une session d'ecran partagé
    1. [tetris](https://github.com/mafintosh/tetris) un tetris
    1. [jszip](https://github.com/pfrazee/jszip) créer lire éditer un zip
+   1. [jszip](https://github.com/maxogden/extract-zip) extraire un zip
 
 ## Boucle
    Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite son petit paragraphe ici, je vous laisse faire les debug qu'il faut pour comprendre pourquoi la promesse est rendu à l'interieur de la boucle, et non à l'extérieur
