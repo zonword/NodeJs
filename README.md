@@ -21,6 +21,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    1. [Why is node running](https://github.com/mafintosh/why-is-node-running) savoir ce qu'un programme node fait
    1. [ssh-exec](https://github.com/mafintosh/ssh-exec) exécuter du code SSH
    1. [on-wake-up](https://github.com/mafintosh/on-wake-up) fonction qui est appelé au reveil de son ordinnateur
+   1. [airscreen](https://github.com/mafintosh/airscreen) génère une session d'ecran partagé
 
 ## Boucle
    Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite son petit paragraphe ici, je vous laisse faire les debug qu'il faut pour comprendre pourquoi la promesse est rendu à l'interieur de la boucle, et non à l'extérieur
