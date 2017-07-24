@@ -16,6 +16,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    1. [Boucle Avec Condition](#boucle-avec-condition) Une boucle avec condition
    1. [setInterval](#setInterval) Répétition d'évenement
    1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
+   1. [Nodemon](#nodemon) Nodemon
 
 ## Boucle
    Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite son petit paragraphe ici, je vous laisse faire les debug qu'il faut pour comprendre pourquoi la promesse est rendu à l'interieur de la boucle, et non à l'extérieur
@@ -106,3 +107,6 @@ for (let { number, platform } of combinations) {
    console.log(`node-v${number}-${platform}.tar.gz`);
 }
 ```
+
+## Nodemon
+   Vous penser avoir une note sur Nodemon, et bien non, je vous ais trahit, car je vais vous parler de respawn, librairie de [mafintosh](https://github.com/mafintosh/respawn) il existe déja de nombreux tuto trés bien expliqué de nodemon sur google, mais respawn en as pas besoins tout est trés bien expliqué dans la documentation
