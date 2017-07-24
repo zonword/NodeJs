@@ -63,7 +63,9 @@ loop(_personnes).then( tableau => console.log(tableau) )
    il faut pouvoir empecher l'evement suivant d'être déclanché,
    pour cela il faut détruite la boucle d'evenement dans celle-ci, et la réactiver en fin d'evenement
    
-   `setInterval` remplace pour le `fs.watch` car je le trouve instable, et il n'est pas géré pareil sur chaque OS, sous unix il utilise inotify, MacOs utilise `...` et windows `...` et une fois implémenté dans notre code, il faut filtrer sur le type d'evenement qu'on veut agir `rename`,... et enfin récuperer sur ce qu'on a besoin un `fichier` ou un `dossier`
+   `setInterval` remplace pour le `fs.watch` car je le trouve instable, et il n'est pas géré pareil sur chaque OS, sous unix il utilise inotify, MacOs utilise `...` et windows `...` et une fois implémenté dans notre code, il faut filtrer sur le type d'evenement qu'on veut agir `rename`,... et enfin récuperer sur ce qu'on a besoin un `fichier` ou un `dossier`.
+   
+   Mais si vous y tenez à votre `watch` voici une librairie qui corrige les faiblesses de fs.watch qui s'apelle [recursive-watch](https://github.com/mafintosh/recursive-watch)
    
 ```javascript
 var _myXtime    = 4000
