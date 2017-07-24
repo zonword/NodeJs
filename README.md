@@ -17,6 +17,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    1. [setInterval](#setInterval) Répétition d'évenement
    1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
    1. [Nodemon](#nodemon) Nodemon
+   1. [Mirror Folder](https://github.com/mafintosh/mirror-folder) Permet de réaliser de la sauvegarde en automatique d'un dossier
 
 ## Boucle
    Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite son petit paragraphe ici, je vous laisse faire les debug qu'il faut pour comprendre pourquoi la promesse est rendu à l'interieur de la boucle, et non à l'extérieur
