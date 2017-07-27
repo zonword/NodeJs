@@ -1,9 +1,15 @@
-# Mes Librairies NodeJs
+# NodeJs
 
-*Du code que je réutilise souvent sont dans ce depot*
+NodeJs est une plate-forme de programmation Javascript développé en C, basé sur le moteur V8 de Google, et permet de développer coté serveur comme PHP, J2EE, Ruby On Rails.
 
-Les codes qui ne mérite aucune explication sont disponible dans le depot
-les autres code que je juge important à savoir sont en explication ci-dessous
+Node représente un environnement d'execution (runtime), un enssemble d'API Javascript ansi qu'une machine virtuelle performante (parseur, interpreteur, et compilateur) pouvant accéder à des ressources système telle que des fichiers et des connexions réseaux (`filesystem`, `socket`,...), nécéssitant tres peu de ressource `streams` qui est un réel avantage pour transformer de gros flux de données ou de fichier faisant plusieur giga-octets avec peu de mémoire.
+Souvent utilisé pour du Chat(Discussion instantanné), Data Streaming (dataviz en temp réel), Proxy(`NgINX`), Logiciel, Monitoring (`PM2`, `Keymetrics`), Server-Side (`Express`)  
+
+Node nous permet d'écrire du `événementiel` et `non bloquante` (asynchrone), elle comporte une communaité qui n'arrête pas d'augmenter avec plus de 380 000 paquets sur le registre npm, 6 milliards de téléchargement par mois, et 65 000 éditeurs.
+
+Ils l'ont fait confiance : Paypal, Ebay, Amazon, LinkedIN, Uber, Netflix, Spotify.
+
+Node encourage à créer de multiples application autonomes et modulaire au lieu d'une seul application monolitiques
 
 ## Remarque
 
@@ -12,7 +18,6 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
 
 ## Sommaire
 
-   1. [Boucle](#boucle) Creer une boucle
    1. [Boucle Avec Condition](#boucle-avec-condition) Une boucle avec condition
    1. [setInterval](#setInterval) Répétition d'évenement
    1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
@@ -24,29 +29,7 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    1. [airscreen](https://github.com/mafintosh/airscreen) génère une session d'ecran partagé
    1. [tetris](https://github.com/mafintosh/tetris) un tetris
    1. [jszip](https://github.com/pfrazee/jszip) créer lire éditer un zip
-   1. [jszip](https://github.com/maxogden/extract-zip) extraire un zip
-
-## Boucle
-   Creer une boucle avec des promises contient une petite subtilité qui je pense mèrite son petit paragraphe ici, je vous laisse faire les debug qu'il faut pour comprendre pourquoi la promesse est rendu à l'interieur de la boucle, et non à l'extérieur
-   
-```javascript
-var _entreprise = []
-var _personnes  = ["patron","secretaire","employé","interim"]
-
-function _Add(unepersonne) {
-   return new Promise( resolve => resolve(_entreprise.push(unepersonne)) )
-}
-
-function Boucle(){
-  return new Promise ( (resolve) => {
-     for(var i in _personnes){
-        _Add(_personnes[i]).then(res => resolve(_entreprise))
-     }
-  })
-}
-
-Boucle().then( listes => console.log(listes) )
-```
+   1. [extract-zip](https://github.com/maxogden/extract-zip) extraire un zip
 
 ## Boucle Avec Condition
    Parcourir un tableau avec des controles dans celle-ci ce fait uniquement de cette manière, si vous avez du code ecris sous cette forme `for(var i = 0; i<files.length; i++)` c'est parfait pour du language synchrone mais par defaut javascript est asynchrone
