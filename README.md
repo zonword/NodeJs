@@ -137,5 +137,5 @@ for (let { number, platform } of combinations) {
 }
 ```
 
-## Nodemon
-   Vous penser avoir une note sur Nodemon, et bien non, je vous ais trahit, car je vais vous parler de respawn, librairie de [mafintosh](https://github.com/mafintosh/respawn) il existe déja de nombreux tuto trés bien expliqué de nodemon sur google, mais respawn en as pas besoins tout est trés bien expliqué dans la documentation
+## Monitoring
+   Il existe différents outil comme [mafintosh](https://github.com/mafintosh/respawn) et PM2 qui permet de gérer et lancer plusieur projet nodejs, avec un système de log et du reboot lors de possible crash, vous pouvez allé plus loin mais cette fois il faudra dépensser un peu plus pour avoir de stats avec Keymetrics
