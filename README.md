@@ -30,7 +30,8 @@ Node encourage à créer de multiples application autonomes et modulaire au lieu
 ## Installation   
 
 ### PROXY
-Dans un monte ou les menaces de piratage informatique sont de plus en plus répété (WannaCry) est m entreprise la sécurité est quelque chose d'indispenssable, et en temps que Développeur il est trés difficile d'y travailler quand notre environnement est complétement fermé, les accès à tout les projets l'acces vers l'exterieur n'est pas conceillé, il faut pouvoir ciblé les projet qui on besoin d'atteinte les reseaux extérieur à l'entreprise, une fois les adresses IP des proxy sont donnée par les équipes il faut pouvoir le faire localement au projet
+Dans un monde ou les menaces de piratage informatique sont de plus en plus fréquent et principalement non ciblé (WannaCry) la question sur la sécurité ne se pose plus, et en temps que Développeur travailler dans un environnement qui est complétement fermé, rend l'accées au autre service tiers plus compliqué, API, module npm, etc... .
+il faut pouvoir configurer notre projet simplement, voici un petit morceau code pour que npm et bower puisse récupérer nos dépences depuis l'extérieur.
    
    .bowerrc
    ```Javascript
