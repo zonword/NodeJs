@@ -26,6 +26,25 @@ Node encourage à créer de multiples application autonomes et modulaire au lieu
    1. [tetris](https://github.com/mafintosh/tetris) un tetris
    1. [jszip](https://github.com/pfrazee/jszip) créer lire éditer un zip
    1. [extract-zip](https://github.com/maxogden/extract-zip) extraire un zip
+
+## Installation   
+
+### PROXY
+Dans un monte ou les menaces de piratage informatique sont de plus en plus répété (WannaCry) est m entreprise la sécurité est quelque chose d'indispenssable, et en temps que Développeur il est trés difficile d'y travailler quand notre environnement est complétement fermé, les accès à tout les projets l'acces vers l'exterieur n'est pas conceillé, il faut pouvoir ciblé les projet qui on besoin d'atteinte les reseaux extérieur à l'entreprise, une fois les adresses IP des proxy sont donnée par les équipes il faut pouvoir le faire localement au projet
+   
+   .bowerrc
+   ```Javascript
+      {
+        "proxy": "http://mon-proxy.com:port",
+        "https-proxy":"http://mon-proxy.com:port"
+      }
+   ```
+   
+   .npmrc
+   ```BATCH
+      proxy=http://mon-proxy.com:port
+      https-proxy=http://mon-proxy.com:port
+   ```
    
 ## Callback et Promise
 
