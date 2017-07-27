@@ -11,14 +11,10 @@ Ils l'ont fait confiance : Paypal, Ebay, Amazon, LinkedIN, Uber, Netflix, Spotif
 
 Node encourage à créer de multiples application autonomes et modulaire au lieu d'une seul application monolitiques
 
-## Remarque
-
-NodeJs est très facile à manipuler, mais on peut vite être dépassé si on est pas rigoureux, en PHP le code est li ligne par ligne
-Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à exécuter, qui seras éxécuté en premier, donc les promises et les callbacks sont indispensable
-
 ## Sommaire
 
-   1. [Boucle Avec Condition](#boucle-avec-condition) Une boucle avec condition
+   1. [Callback et Promise](#callback-et-promise)
+   1. [Boucle Avec Condition](#boucle-avec-condition)
    1. [setInterval](#setInterval) Répétition d'évenement
    1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
    1. [respawn](https://github.com/mafintosh/respawn) Permet de se relancer a l'interieur de son programme à la fin d'un traitement
@@ -30,6 +26,26 @@ Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à e
    1. [tetris](https://github.com/mafintosh/tetris) un tetris
    1. [jszip](https://github.com/pfrazee/jszip) créer lire éditer un zip
    1. [extract-zip](https://github.com/maxogden/extract-zip) extraire un zip
+   
+## Callback et Promise
+
+NodeJs est très facile à manipuler, mais on peut vite être dépassé si on est pas rigoureux, en PHP le code est lit ligne par ligne,
+Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à exécuter, qui seras éxécuté en premier, donc les promises et les callbacks deviennet indispenssable.
+
+`callback` est équivalent à un `return`, le callback est mis en dernier paramamètre de la fonction, lors de l'appelle de cette fonction
+le dernier paramètre seras une fonction qui à pour paramètre le resultat de la fonction appelé
+```javascript
+function Addition(var1,var2,cb){ cb(var1+var2) }
+
+Addition(varA,varB, (resultat) => { console.log(resultat) })
+```
+
+`promise` est équivalent lui aussi à un `return`, la promise se retrouve en fin fonction, elle retourne uniquement quand la variable passé en paramètre est prète.
+```javascript
+function Addition(var1,var2){ return new Promise( resolve => resolve(var1+var2) )}
+
+Addition(varA,varB).then( resultat => console.log(resultat))
+```
 
 ## Boucle Avec Condition
    Parcourir un tableau avec des controles dans celle-ci ce fait uniquement de cette manière, si vous avez du code ecris sous cette forme `for(var i = 0; i<files.length; i++)` c'est parfait pour du language synchrone mais par defaut javascript est asynchrone
