@@ -137,4 +137,4 @@ for (let { number, platform } of combinations) {
 ```
 
 ## Monitoring
-   Il existe différents outil comme [mafintosh](https://github.com/mafintosh/respawn) et PM2 qui permet de gérer et lancer plusieur projet nodejs, avec un système de log et du reboot lors de possible crash, vous pouvez allé plus loin mais cette fois il faudra dépensser un peu plus pour avoir de stats avec Keymetrics
+   Il existe différents outil comme [respawn](https://github.com/mafintosh/respawn) et PM2 qui permet de gérer et lancer plusieur projets nodejs, avec un système de log et du reboot lors de possible crash, vous pouvez aller plus loin avec Keymetrics, qui n'est gratuit pour qu'un seul projet, mais si vous avez plusieur il faudra utiliser aussi sont porte monaie
