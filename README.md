@@ -5,9 +5,9 @@ NodeJs est une plate-forme de programmation Javascript développé en C, basé s
 Node représente un environnement d'execution (runtime), un enssemble d'API Javascript ansi qu'une machine virtuelle performante (parseur, interpreteur, et compilateur) pouvant accéder à des ressources système telle que des fichiers et des connexions réseaux (`filesystem`, `socket`,...), nécéssitant tres peu de ressource `streams` qui est un réel avantage pour transformer de gros flux de données ou de fichier faisant plusieur giga-octets avec peu de mémoire.
 Souvent utilisé pour du Chat(Discussion instantanné), Data Streaming (dataviz en temp réel), Proxy(`NgINX`), Logiciel, Monitoring (`PM2`, `Keymetrics`), Server-Side (`Express`)  
 
-Node nous permet d'écrire du `événementiel` et `non bloquante` (asynchrone), elle comporte une communaité qui n'arrête pas d'augmenter avec plus de 380 000 paquets sur le registre npm, 6 milliards de téléchargement par mois, et 65 000 éditeurs.
+Node nous permet d'écrire du `événementiel` (event) et `non bloquante` (asynchrone), elle comporte une communaité qui n'arrête pas d'augmenter avec plus de 380 000 paquets sur le registre npm, 6 milliards de téléchargement par mois, et 65 000 éditeurs.
 
-Ils l'ont fait confiance : Paypal, Ebay, Amazon, LinkedIN, Uber, Netflix, Spotify.
+Ils l'ont fait confiance : Paypal, Ebay, Amazon, LinkedIN, Uber, Netflix, Spotify...
 
 Node encourage à créer de multiples application autonomes et modulaire au lieu d'une seul application monolitiques
 
@@ -50,7 +50,7 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
 ## Callback et Promise
 
 NodeJs est très facile à manipuler, mais on peut vite être dépassé si on est pas rigoureux, en PHP le code est lit ligne par ligne,
-Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à exécuter, qui seras éxécuté en premier, donc les promises et les callbacks deviennet indispenssable.
+Mais avec NodeJs c'est du code asynchrone, ça seras le code le plus rapide à exécuter, qui seras éxécuté en premier, donc les promises et les callbacks deviennent indispenssable.
 
 `callback` est équivalent à un `return`, le callback est mis en dernier paramamètre de la fonction, lors de l'appelle de cette fonction
 le dernier paramètre seras une fonction qui à pour paramètre le resultat de la fonction appelé
@@ -68,7 +68,7 @@ Addition(varA,varB).then( resultat => console.log(resultat))
 ```
 
 ## Boucle Avec Condition
-   Parcourir un tableau avec des controles dans celle-ci ce fait uniquement de cette manière, si vous avez du code ecris sous cette forme `for(var i = 0; i<files.length; i++)` c'est parfait pour du language synchrone mais par defaut javascript est asynchrone
+   Parcourir un tableau avec des controles dans celle-ci ce fait uniquement de cette manière, si vous avez du code écris sous cette forme `for(var i = 0; i<files.length; i++)` c'est parfait pour du language synchrone mais par defaut javascript est asynchrone
    
 ```javascript
 var _personnes  = ["patron","secretaire","employé","interim"]
@@ -85,15 +85,14 @@ loop(_personnes).then( tableau => console.log(tableau) )
 ```
 
 ## setInterval
-   Je l'utilise quand j'ai besoin de répéter du code tout les `X` secondes,
-   petit detail à savoir c'est que quand le premier evenement n'est pas terminé, 
-   il faut pouvoir empecher l'evement suivant d'être déclanché,
-   pour cela il faut détruite la boucle d'evenement dans celle-ci, et la réactiver en fin d'evenement
+Je l'utilise quand j'ai besoin de répéter du code tout les `X` secondes,
+petit detail à savoir c'est que quand le premier evenement n'est pas terminé, 
+il faut pouvoir empecher le deuxième evement d'être déclanché,
+pour cela il faut détruite la boucle au début du premier évenement, et la réactiver en fin.
+`setInterval` remplace pour moi le `fs.watch` car je le trouve instable, et il n'est pas géré pareil sur chaque OS, sous unix il utilise inotify, MacOs utilise `...` et windows `...` et une fois implémenté dans notre code, il faut filtrer sur le type d'evenement qu'on veut agir `rename`,... et enfin récuperer sur ce qu'on a besoin un `fichier` ou un `dossier`.
    
-   `setInterval` remplace pour le `fs.watch` car je le trouve instable, et il n'est pas géré pareil sur chaque OS, sous unix il utilise inotify, MacOs utilise `...` et windows `...` et une fois implémenté dans notre code, il faut filtrer sur le type d'evenement qu'on veut agir `rename`,... et enfin récuperer sur ce qu'on a besoin un `fichier` ou un `dossier`.
-   
-   Mais si vous y tenez à votre `watch` voici une librairie qui corrige les faiblesses de fs.watch qui s'apelle [recursive-watch](https://github.com/mafintosh/recursive-watch)
-   
+Mais si vous y tenez à votre `watch` voici une librairie qui corrige les faiblesses de fs.watch qui s'apelle [recursive-watch](https://github.com/mafintosh/recursive-watch) il y a comme correction un rajout d'un timeout, car fs.watch sur certain action,trouve sur les gros fichiers plusieur événement, or qu'il y en as eu qu'un seul, il y'a d'autre correction mais biensur n'utilisé pas la librairie d'orgine fs.watch comme pour tout fs, préférer fs-extra, ou autre.
+
 ```javascript
 var _myXtime    = 4000
 var _myinterval = null
