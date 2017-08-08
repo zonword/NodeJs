@@ -157,5 +157,9 @@ stream.on('data', (data) => {
 
 stream.on('end', () => {
    console.log();
-}),
+});
+
+stream.on('error', (error) => {
+   console.error(error.message);
+});
 ```
