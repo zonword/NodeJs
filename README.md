@@ -174,4 +174,4 @@ var readStream  = fs.createReadStream('IN.txt');
 var writeStream = fs.createWriteStream('OUT.txt');
 
 readStream.pipe(writeStream);
-```javascript
+```
