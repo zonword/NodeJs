@@ -144,6 +144,8 @@ for (let { number, platform } of combinations) {
    Il existe différents outil comme [respawn](https://github.com/mafintosh/respawn) et PM2 qui permet de gérer et lancer plusieur projets nodejs, avec un système de log et du reboot lors de possible crash, vous pouvez aller plus loin avec Keymetrics, qui n'est gratuit pour qu'un seul projet, mais si vous avez plusieur il faudra utiliser aussi sont porte monaie
    
 ## Stream
+
+### READSTREAM
    fs.createReadStream ouvre le fichier comme un flux, et non en le stockant en intégralité dans une zone mémoire, trés utile pour traiter des gros fichier en simultannée
 
 ```javascript
@@ -163,3 +165,13 @@ stream.on('error', (error) => {
    console.error(error.message);
 });
 ```
+### WRITESTREAM
+   fs.createWriteStream récupère les données, pipe est idéale pour les flux, il trouve tout sont utilité en sortie d'un flux ainsi qu'en entrée
+
+```javascript
+var fs = require('fs');
+var readStream  = fs.createReadStream('IN.txt');
+var writeStream = fs.createWriteStream('OUT.txt');
+
+readStream.pipe(writeStream);
+```javascript
