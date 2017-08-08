@@ -7,9 +7,13 @@ Souvent utilisé pour du Chat(Discussion instantanné), Data Streaming (dataviz 
 
 Node nous permet d'écrire du `événementiel` (event) et `non bloquante` (asynchrone), elle comporte une communaité qui n'arrête pas d'augmenter avec plus de 380 000 paquets sur le registre npm, 6 milliards de téléchargement par mois, et 65 000 éditeurs.
 
-Ils l'ont fait confiance : Paypal, Ebay, Amazon, LinkedIN, Uber, Netflix, Spotify...
+Ils l'ont fait confiance : Paypal, Ebay, Amazon, LinkedIN, Uber, Netflix, Spotify, La Poste, Administration de l'état Français...
 
-Node encourage à créer de multiples application autonomes et modulaire au lieu d'une seul application monolitiques
+Node encourage à créer de multiples application autonomes et modulaire au lieu d'une seul application monolitiques, qui rapporte un gain de performance, evolutivité rapide.
+
+Je pense vous avoir convaincue sur le necessité de s'approprié ces outils, car ceux qui pense que l'arrivé du BIG DATA ne fait que commencé ce trompe, il est déja bien présent, nous devons nous servir de cette tendance.
+
+Comment s'y prendre car quand on utilise notre meilleur amis google, nodejs on trouve des tutos d'application de messagerie instantanné, des applications sur des base de donnée MongoDb, rien de réelement concré. Il faut s'appuyer sur les exemples des entreprises que j'ai cité plus haut, regarder leur API, voir les tendances et leur gains sur leur domaine d'activité, biensur on ne deviendra pas expert dans ce domaine en faisant que ça.
 
 ## Sommaire
 
@@ -138,3 +142,20 @@ for (let { number, platform } of combinations) {
 
 ## Monitoring
    Il existe différents outil comme [respawn](https://github.com/mafintosh/respawn) et PM2 qui permet de gérer et lancer plusieur projets nodejs, avec un système de log et du reboot lors de possible crash, vous pouvez aller plus loin avec Keymetrics, qui n'est gratuit pour qu'un seul projet, mais si vous avez plusieur il faudra utiliser aussi sont porte monaie
+   
+## Stream
+   fs.createReadStream ouvre le fichier comme un flux, et non en le stockant en intégralité dans une zone mémoire, trés utile pour traiter des gros fichier en simultannée
+
+```javascript
+var fs 	   = require('fs');
+var stream = fs.createReadStream('fichier.txt');
+
+stream.on('data', (data) => {
+   var chunck = data.toString();
+   process.stdout.write(chunck);
+});
+
+stream.on('end', () => {
+   console.log();
+}),
+```
