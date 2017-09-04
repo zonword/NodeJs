@@ -30,6 +30,7 @@ Comment s'y prendre car quand on utilise notre meilleur amis google, nodejs on t
    1. [tetris](https://github.com/mafintosh/tetris) un tetris
    1. [jszip](https://github.com/pfrazee/jszip) créer lire éditer un zip
    1. [extract-zip](https://github.com/maxogden/extract-zip) extraire un zip
+   1. [cluster](#cluster) chapitre sur les cluster
 
 ## Installation   
 
@@ -174,4 +175,38 @@ var readStream  = fs.createReadStream('IN.txt');
 var writeStream = fs.createWriteStream('OUT.txt');
 
 readStream.pipe(writeStream);
+```
+
+### Cluster
+   Les applications par defaut avec nodejs sont mono-thread, deux méthode pour utiliser tout les cores d'un serveur 
+
+- Lancer plusieur instances sur différent serveur avec un reverse proxy pour faire du land balancer
+- Utiliser le mode cluster
+
+La première méthode permet de partager au mieux la puissance de la machine entre les différentes instance, sans dégrader les performances en partageant les cores entre plusieurs instances
+
+La deuxième un process est démarré en mode master, il à pour role de dispatcher aux process forkés qui eux sont dédiés au traitement qui sont en mode worker
+
+```javascript
+const recluster = require("cluster");
+const os      = require("os");
+const fs      = require("fs");
+
+var cluster = recluster(path.join(__dirname, "server.js"), {
+   /*Options*/
+});
+
+cluster.run();
+
+process.on("SIGUSR2, function() {
+   console.log("Signal SIGUSR2 reçus, rechargement du cluster ...");
+   cluster.reload();
+});
+
+fs.watchFile('package.json', function(curr, prev) {
+   console.log("package.json changé, rechargement du cluster ...");
+   cluster.reload();
+});
+
+console.log("Cluster démarré, Utilisez la commande 'kill -s SIGUSR2 " + process.pid + "' pour le recharger.");
 ```
