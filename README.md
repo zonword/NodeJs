@@ -72,6 +72,47 @@ function Addition(var1,var2){ return new Promise( resolve => resolve(var1+var2) 
 Addition(varA,varB).then( resultat => console.log(resultat))
 ```
 
+un exemple de code un peu plus poussé
+
+```javacript
+var makeRequest = (options) => {
+	var deferred = Q.defer();
+	request.call(options, (err, result) => {
+		if(err) { return deferred.reject(err); }
+		deferred.resolve(result);
+	});
+	return deferred.promise;
+};
+
+var getRequest = (url) => {
+	var deferred = Q.defer();
+	var options = {
+		method: "GET",
+		url: url
+	};
+	makeRequest(options)
+		.then((result) => {
+			deferred.resolve(result);
+		})
+		.catch((error) => {
+			deferred.reject(error);
+		});
+	return deferred.promise;
+};
+
+var getMyAccount = (accountId) => {
+	var deferred = Q.defer();
+	getRequest('/account/'+accountId)
+		.then((result) => {
+			deferred.resolve(result);
+		})
+		.catch((err) => {
+			deferred.resolve(err);
+		});
+	return deferred.promise;
+};
+```
+
 ## Boucle Avec Condition
    Parcourir un tableau avec des controles dans celle-ci ce fait uniquement de cette manière, si vous avez du code écris sous cette forme `for(var i = 0; i<files.length; i++)` c'est parfait pour du language synchrone mais par defaut javascript est asynchrone
    
