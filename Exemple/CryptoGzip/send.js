@@ -25,10 +25,6 @@ const req = http.request(options, res => {
    console.log('Server response : ' + res.statusCode);
 });
 
-const req = http.request(options, res => {
-   console.log('Server response : ' + res.statusCode);
-});
-
 fs.createReadstream(file)
    .pipe(zlib.createGzip())
    .pipe(crypto.createCipher('aes192', 'a_shared_secret'))
