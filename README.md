@@ -74,7 +74,7 @@ Addition(varA,varB).then( resultat => console.log(resultat))
 
 un exemple de code un peu plus poussé
 
-```javacript
+```javascript
 var makeRequest = (options) => {
 	var deferred = Q.defer();
 	request.call(options, (err, result) => {
