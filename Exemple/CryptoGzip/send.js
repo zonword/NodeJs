@@ -4,7 +4,7 @@ const fs     = require('fs');
 const zlib   = require('zlib');
 const crypto = require('crypto');
 const http   = require('http');
-const path   = require('path);
+const path   = require('path');
 
 const file   = process.argv[2];
 const server = process.argv[3];
