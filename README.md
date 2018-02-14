@@ -17,6 +17,7 @@ Comment s'y prendre car quand on utilise notre meilleur amis google, nodejs on t
 
 ## Sommaire
 
+   1. [Set Donnée Tableau](#set-donnee-tableau)
    1. [Callback et Promise](#callback-et-promise)
    1. [Boucle Avec Condition](#boucle-avec-condition)
    1. [setInterval](#setInterval) Répétition d'évenement
@@ -52,6 +53,35 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
       https-proxy=http://mon-proxy.com:port
    ```
    
+## Set donnée tableau
+
+```Javascript
+data = {
+   personnes: [
+      { 
+         id     : 0, 
+	 prenom : 'toto', 
+	 nom    : '',
+	 age    : '08' 
+      },
+      { 
+         id     : 1, 
+	 prenom : 'Bob', 
+	 nom    : 'eponge',
+	 age    : '56' 
+      },
+   ]
+}
+
+const personnes   = [...data.personnes];
+const personIndex = data.personnes.findIndex( p => { return p.id == id; } );
+const person      = { ...this.state.personnes[personIndex] };
+
+person.prenom          = 'nobody';
+personnes[personIndex] = person;
+
+```
+
 ## Callback et Promise
 
 NodeJs est très facile à manipuler, mais on peut vite être dépassé si on est pas rigoureux, en PHP le code est lit ligne par ligne,
