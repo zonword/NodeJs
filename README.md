@@ -69,7 +69,7 @@ data = {
 	 prenom : 'Bob', 
 	 nom    : 'eponge',
 	 age    : '56' 
-      },
+      }
    ]
 }
 
