@@ -75,7 +75,7 @@ data = {
 
 const personnes   = [...data.personnes];
 const personIndex = data.personnes.findIndex( p => { return p.id == id; } );
-const person      = { ...this.state.personnes[personIndex] };
+const person      = { ...data.personnes[personIndex] };
 
 person.prenom          = 'nobody';
 personnes[personIndex] = person;
