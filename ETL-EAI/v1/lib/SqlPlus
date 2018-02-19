@@ -1,0 +1,27 @@
+const spawn = require('child_process').spawn;
+
+function main(data,monbat){
+    var magasin           = data.magasin;
+    var fichieravecchemin = data.fichieravecchemin;
+    res                   = spawn('cmd.exe', ['/c', monbat, magasin, fichieravecchemin]);
+    //res                   = spawn('cmd.exe', [monbat, magasin, fichieravecchemin]);
+
+    res.stdout.on('data', function(data){
+      stdout(`o Sortie > ${printjaune(data)}`)
+      //printjaune(data)
+    })
+    res.stderr.on('data', function(data){
+      stderr(`o Erreur > ${printrouge(data)}`)
+      //printrouge(data)
+    })
+    res.on('exit', function(code){
+      exit(`o Quitte > ${printjaune(code)}`)
+      //printmauve(data)
+    })
+
+    /**
+    * Il faut killer res avec res.kill()
+    */
+}
+
+module.exports.Commit = main;
