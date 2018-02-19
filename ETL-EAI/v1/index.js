@@ -1,39 +1,48 @@
+/*Dependance pour nodejs*/
 const fs          = require('fs')
 const gracefulFs  = require('graceful-fs')
-const path  			= require('path')
-const chalk		    = require('chalk')
+const path  	  = require('path')
+
+/*Permer de jouer avec les couleur sur les console.log*/
+const chalk	  = require('chalk')
+
+/*Librairie du projet (code metier)*/
 const QueueWorker = require('./lib/ClassQueueWorker')
-const xlsx      	= require('./lib/ExtractXlsx')
+const xlsx	  = require('./lib/ExtractXlsx')
 const csv      	  = require('./lib/ExtractCsv')
-const platform  	= require('./lib/Platform')
-const file      	= require('./lib/File')
-const sqlplus   	= require('./lib/SqlPlus')
+const platform    = require('./lib/Platform')
+const file        = require('./lib/File')
+const sqlplus  	  = require('./lib/SqlPlus')
+
+/*Permer de modifier une ligne déja écrite dans la console*/
 const DraftLog    = require('draftlog')
 DraftLog(console)
 gracefulFs.gracefulify(fs)
-
 printrouge  = chalk.bold.red
-printvert 	= chalk.bold.green
-printjaune 	= chalk.bold.yellow
-printbleu	  = chalk.bold.cyan
-printmauve	= chalk.bold.magenta
+printvert   = chalk.bold.green
+printjaune  = chalk.bold.yellow
+printbleu   = chalk.bold.cyan
+printmauve  = chalk.bold.magenta
 var titre = console.draft()
 stdout    = console.draft()
 stderr    = console.draft()
 exit      = console.draft()
 var debug = console.draft()
 
+/*Notre affichage au lancemenet du index.js*/
 titre(printvert(`> Trigger File: .xlsx && .csv`))
 stdout(`o Sortie > `)
 stderr(`o Erreur > `)
 exit(`o Quitte > `)
 debug(printmauve(`o Debug`))
 
+/*Nos variable globale à index.js*/
 var files     = []
 const dir     = path.join(__dirname,'platform')
 var interval  = null
 var timeout   = null
 
+/*Verifie si le fichier comporte un espace dans son nom fichier*/
 function existsEscapeSync(file){
   var res = file.indexOf(" ")
   if( res == -1) {
@@ -42,6 +51,8 @@ function existsEscapeSync(file){
     return true
   }
 }
+
+/*Verifie si le fichier avec son chemin exist*/
 function existsSync(filepath){
   try{
     fs.statSync(filepath)
@@ -51,6 +62,8 @@ function existsSync(filepath){
   }
   return true
 }
+
+/*Retourne la taille du fichier*/
 function filesizeSync(filepath){
   var stats
   var size
@@ -65,6 +78,8 @@ function filesizeSync(filepath){
     return false
   }
 }
+
+/*Notre boucle d'affichage du fichier*/
 function AffichageTitre(){
   timeout = setTimeout(function() {
     titre(printvert(`\\ Trigger File: .xlsx && .csv`))
@@ -79,6 +94,8 @@ function AffichageTitre(){
     }, 1000)
   }, 1000)
 }
+
+/*Veirifie si aucun fichier dans le files est en cours de travail*/
 function checkWorking(){
   var res = null
   for(var i = 0; i < files.length; i++){
@@ -89,6 +106,8 @@ function checkWorking(){
   }
   return false
 }
+
+/*Veirifie si il n'y pas un nom qui existe déja dans le tableau files*/
 function checkfile(nom){
   var res
   for(var i = 0; i < files.length; i++){
@@ -98,11 +117,14 @@ function checkfile(nom){
   return true
 }
 
+/*Change la couleur sur le fichier sur lequel on travail*/
 function metierafficher(){
   for(var i = 0 ; i < files.length; i++ ){
     files[i].Affichage()
   }
 }
+
+/*la fonction metier de notre projet*/
 function codemetier(i){
   var metierTimeout = null
   var cheminfichier = null
@@ -121,9 +143,11 @@ function codemetier(i){
   var workfile      = null
   var historiser    = null
   var arraycsv      = []
+  /*On ne bosse pas si y'a un rien dans notre repertoire basique*/
   if(!files.length) {
     return;
   } else {
+    /*Initilisation tout est dans le nom des fonction GetFile ici c'est pour savoir si le fichier est troujours présent*/
     cheminfichier = files[i].GetFile()
     extension     = path.extname(cheminfichier)
     nomfichier    = files[i].GetName()
@@ -212,6 +236,7 @@ function metier(){
   main(true)
 }
 
+/*Permet de scanner notre repertoire*/
 function searchfiles(directory){
   var file          = null
   var existfile     = null
@@ -245,6 +270,7 @@ function searchfiles(directory){
   }
 }
 
+/*Fonction principale du projet*/
 function main(flag){
   if(flag == true){
     interval = setInterval(function() {
