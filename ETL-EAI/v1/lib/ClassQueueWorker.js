@@ -1,3 +1,4 @@
+/*Constructeur*/
 function QueueWorker(name,file){
   this.name            = name
   this.file            = file
@@ -5,6 +6,7 @@ function QueueWorker(name,file){
   this.working         = false
 }
 
+/*Methode GETTEUR*/
 QueueWorker.prototype.GetFile   = function(){
   return this.file
 }
@@ -14,6 +16,8 @@ QueueWorker.prototype.GetName   = function(){
 QueueWorker.prototype.GetWorking   = function(){
   return this.working
 }
+
+/*Methode SETTEUR*/
 QueueWorker.prototype.SetWorking   = function(b){
   var self     = this
   self.working = b
@@ -24,6 +28,8 @@ QueueWorker.prototype.SetStatus = function(message){
   var self = this
   self.status(printmauve(message))
 }
+
+/*Modifie l'affichage*/
 QueueWorker.prototype.Finish    = function(){
   var self      = this
   self.working  = false
