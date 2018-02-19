@@ -1,0 +1,21 @@
+{
+  "name": "queueplatform",
+  "bin": {
+    "TRF": "index.js"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "csv-parse": "^1.2.0",
+    "fs": "0.0.1-security",
+    "graceful-fs": "^4.1.11",
+    "node-xlsx": "^0.7.4",
+    "path": "^0.12.7"
+  },
+  "author": "kevin grondin",
+  "license": "MIT",
+  "description": "application TRF",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
