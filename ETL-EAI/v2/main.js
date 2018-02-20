@@ -1,6 +1,6 @@
 fs              = require('fs')
 gracefulFs      = require('graceful-fs')
-path  			    = require('path')
+path  			= require('path')
 libFile         = require('./lib/DirAndFile/File')
 libDir          = require('./lib/DirAndFile/Dir')
 metier          = require('./app/Metier')
