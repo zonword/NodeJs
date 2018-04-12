@@ -1,0 +1,25 @@
+{
+  "name": "myApp",
+  "bin": {
+    "TRF": "index.js"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "chalk"           : "^2.3.2",
+    "chalk-animation" : "^1.6.0",
+    "csv-parse"       : "^1.2.0",
+    "dotenv"          : "^5.0.1",
+    "draftlog"        : "^1.0.12",
+    "fs"              : "0.0.1-security",
+    "graceful-fs"     : "^4.1.11",
+    "node-xlsx"       : "^0.7.4",
+    "path"            : "^0.12.7"
+  },
+  "author": "kevin grondin",
+  "license": "MIT",
+  "description": "Votre description",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
