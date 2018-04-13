@@ -21,7 +21,6 @@ Comment s'y prendre car quand on utilise notre meilleur amis google, nodejs on t
    1. [Callback et Promise](#callback-et-promise)
    1. [Boucle Avec Condition](#boucle-avec-condition)
    1. [setInterval](#setInterval) Répétition d'évenement
-   1. [ArrayJson](#arrayjson) atteindre les différente clée d'un tableau JSON
    1. [respawn](https://github.com/mafintosh/respawn) Permet de se relancer a l'interieur de son programme à la fin d'un traitement
    1. [Mirror Folder](https://github.com/mafintosh/mirror-folder) Permet de réaliser de la sauvegarde en automatique d'un dossier
    1. [Why is node running](https://github.com/mafintosh/why-is-node-running) savoir ce qu'un programme node fait
@@ -189,22 +188,6 @@ function MyFuncInterval(flag){
 }
 
 MyFuncInterval(true)
-```
-
-## ArrayJson
-   Voici une façon peut connu pour atteindre des donnée d'un tableau JSON [source](https://blog.heroku.com/node-habits-2017#3-modernize-your-javascript)
-   
-   ```javascript
-const combinations = [
-   { number: "8.0.0", platform: "linux-x64" },
-   { number: "8.0.0", platform: "darwin-x64" },
-   { number: "7.9.0", platform: "linux-x64" },
-   { number: "7.9.0", platform: "darwin-x64" }
-];
-
-for (let { number, platform } of combinations) {
-   console.log(`node-v${number}-${platform}.tar.gz`);
-}
 ```
 
 ## Monitoring
