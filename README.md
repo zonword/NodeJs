@@ -213,7 +213,7 @@ for (let { number, platform } of combinations) {
 ## Stream
 
 ### READSTREAM
-   fs.createReadStream ouvre le fichier comme un flux, et non en le stockant en intégralité dans une zone mémoire, trés utile pour traiter des gros fichier en simultannée
+   fs.createReadStream ouvre le fichier comme un flux, et non en le stockant en intégralité dans une zone mémoire, trés utile pour traiter des gros fichier en simultannée, attention le readFile n'est pas inutile, on peut l'utiliser quand on a besoin de faire des opérations ligne par ligne, readStream seras plus utile lors de la construction fichier, la copie, ou remplir une variable
 
 ```javascript
 var fs 	   = require('fs');
