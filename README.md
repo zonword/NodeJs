@@ -247,7 +247,7 @@ var cluster = recluster(path.join(__dirname, "server.js"), {
 
 cluster.run();
 
-process.on("SIGUSR2, function() {
+process.on("SIGUSR2", function() {
    console.log("Signal SIGUSR2 reçus, rechargement du cluster ...");
    cluster.reload();
 });
