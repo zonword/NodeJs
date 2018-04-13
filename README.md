@@ -144,20 +144,15 @@ var getMyAccount = (accountId) => {
 ```
 
 ## Boucle Avec Condition
-   Parcourir un tableau avec des controles dans celle-ci ce fait uniquement de cette manière, si vous avez du code écris sous cette forme `for(var i = 0; i<files.length; i++)` c'est parfait pour du language synchrone mais par defaut javascript est asynchrone
+   On ne fait plus de boucle avec for, on préférera utiliser map ou filter, exemple d'utilisation
    
 ```javascript
 var _personnes  = ["patron","secretaire","employé","interim"]
 
-function loop(tableau){
-   var res = false
-   for(var i in tableau){
-      if(tableau[i] == "interim") { res = true } 			
-   }
-   return new Promise( resolve => resolve(res) )
-}
-
-loop(_personnes).then( tableau => console.log(tableau) )
+// retourne un tableau avec chaque element un "s" à la fin
+const parcour = _personnes.map( personne => personne+"s" )
+// retourne un tableau qu'avec l'élement "interim"
+const check = _personnes.filter( personne => { return personne === "interim" } )
 ```
 
 ## setInterval
