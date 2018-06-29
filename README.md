@@ -65,6 +65,14 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  apm config set proxy http://proxy.leader-sys.com:80
  apm config set https_proxy http://proxy.leader-sys.com:80
  ```
+
+  Installer un package atom en CLI
+   ```BATCH
+ cd ~/.atom/packages
+ git clone https://github.com/monpaquet
+ cd monpaquet
+ npm install
+ ```
    
 ## Set donnée tableau
 
