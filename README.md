@@ -52,6 +52,20 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
       https-proxy=http://mon-proxy.com:port
    ```
    
+ Si on ne veux pas s'embeter à rajouter des fichiers à chaque fois, il suffit juste de de taper dans la console
+ 
+ Pour rajouter un proxy à un npm
+ ```BATCH
+ npm config set proxy http://proxy.leader-sys.com:80
+ npm config set https-proxy http://proxy.leader-sys.com:80
+ ```
+ 
+  Pour rajouter un proxy à atom
+ ```BATCH
+ apm config set proxy http://proxy.leader-sys.com:80
+ apm config set https_proxy http://proxy.leader-sys.com:80
+ ```
+   
 ## Set donnée tableau
 
 ```Javascript
