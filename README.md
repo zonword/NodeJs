@@ -17,6 +17,8 @@ Comment s'y prendre car quand on utilise notre meilleur amis google, nodejs on t
 
 ## Sommaire
 
+   1. [Astuce](#astuce)
+   1. [Proxy](#proxy)
    1. [Set Donnée Tableau](#set-donnee-tableau)
    1. [Callback et Promise](#callback-et-promise)
    1. [Boucle Avec Condition](#boucle-avec-condition)
@@ -31,6 +33,21 @@ Comment s'y prendre car quand on utilise notre meilleur amis google, nodejs on t
    1. [jszip](https://github.com/pfrazee/jszip) créer lire éditer un zip
    1. [extract-zip](https://github.com/maxogden/extract-zip) extraire un zip
    1. [cluster](#cluster) chapitre sur les cluster
+
+### Astuce
+
+Uniquement sous Unix, vous pouvez demarrer le programme directement sans appelé Node, si votre programme commence comme ci-dessous
+
+```JAVASCRIPT
+#!/usr/bin/env node
+'use strict';
+ ```
+ 
+ mais avant il faut le rendre executable par le systeme
+ 
+ ```BATCH
+ chmod +x monfichier.js
+ ```
 
 ## Installation   
 
