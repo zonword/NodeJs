@@ -67,14 +67,14 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  
  Pour rajouter un proxy à un npm
  ```BATCH
- npm config set proxy http://proxy.leader-sys.com:80
- npm config set https-proxy http://proxy.leader-sys.com:80
+ npm config set proxy http://mon-proxy.com:port
+ npm config set https-proxy http://mon-proxy.com:port
  ```
  
   Pour rajouter un proxy à atom
  ```BATCH
- apm config set proxy http://proxy.leader-sys.com:80
- apm config set https_proxy http://proxy.leader-sys.com:80
+ apm config set proxy http://mon-proxy.com:port
+ apm config set https_proxy http://mon-proxy.com:port
  ```
 
   Installer un package atom en CLI
