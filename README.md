@@ -105,6 +105,8 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  
  ```shell
  apt-get update && apt-get upgrade
+ 
+ sudo apt install python3 python3-pip
  ```
    
 ## Set donnée tableau
