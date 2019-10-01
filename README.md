@@ -89,6 +89,8 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  
  Nous avons la chance d'avoir sur windows le WSL, avoir la puissance de Linux sous Windows ce n'est plus un rêve mais bien une réalité
  
+ Dans les paramètres **Espace developpeur** on doit se mettre en mode **Mode developpeur**
+ 
  Ouvrir un powershell en administrateur
  
  ```shell
