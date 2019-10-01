@@ -85,11 +85,16 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  npm install
  ```
  
- ### Environnement Windows 10
+### Environnement Windows 10
  
- Nous avons la chance d'avoir sur windows le WSL, avoir la puissance de Linux sous Windows ce n'est plus un rêve mais bien une réalité
+Nous avons la chance d'avoir sur windows le WSL, avoir la puissance de Linux sous Windows ce n'est plus un rêve mais bien une réalité
  
- Dans les paramètres **Espace developpeur** on doit se mettre en mode **Mode developpeur**
+Dans les paramètres **Espace developpeur** on doit se mettre en mode **Mode developpeur**
+ 
+Dans panneau de configuration > Programmes > Programmes et fonctionnalité > Activer ou desactiver des fonctionnalités dans windows, et vérifier que sous-système Windows pour linux est bien coché
+ 
+ensuite dans tout les terminaux possible et imaginable il suffit de bash pour que ça soit actif 
+ 
  
  Ouvrir un powershell en administrateur
  
@@ -114,6 +119,8 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  
  sudo apt-get install openssh-client
  ```
+ 
+ 
    
 ## Set donnée tableau
 
