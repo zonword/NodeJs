@@ -111,6 +111,8 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  sudo apt install python3 python3-pip
  
  sudo apt install htop
+ 
+ sudo apt-get install openssh-client
  ```
    
 ## Set donnée tableau
