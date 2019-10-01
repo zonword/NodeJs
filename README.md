@@ -84,6 +84,28 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  cd monpaquet
  npm install
  ```
+ 
+ ### Environnement Windows 10
+ 
+ Nous avons la chance d'avoir sur windows le WSL, avoir la puissance de Linux sous Windows ce n'est plus un rêve mais bien une réalité
+ 
+ Ouvrir un powershell en administrateur
+ 
+ ```shell
+ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+ ```
+ 
+ Télécharger manuellement l'image appx de votre distribution linux préféré [ici](https://docs.microsoft.com/fr-fr/windows/wsl/install-manual)
+ 
+ ```shell
+ Add-AppxPackage .\vote_image.appx
+ ```
+ 
+ Dans la menu démarrer windows vous allez voir le nom de votre distribution, entrez un nom d'utilisateur et mot de passe
+ 
+ ```shell
+ apt-get update && apt-get upgrade
+ ```
    
 ## Set donnée tableau
 
