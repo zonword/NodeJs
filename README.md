@@ -109,6 +109,8 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  apt-get update && apt-get upgrade
  
  sudo apt install python3 python3-pip
+ 
+ sudo apt install htop
  ```
    
 ## Set donnée tableau
