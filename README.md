@@ -117,7 +117,7 @@ ensuite dans tout les terminaux possible et imaginable il suffit de bash pour qu
  
  sudo apt install htop
  
- sudo apt-get install openssh-client
+ sudo apt install openssh-client
  ```
  
  
