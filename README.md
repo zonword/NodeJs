@@ -267,7 +267,13 @@ MyFuncInterval(true)
 ```
 
 ## Monitoring
-   Il existe différents outil comme [respawn](https://github.com/mafintosh/respawn) et PM2 qui permet de gérer et lancer plusieur projets nodejs, avec un système de log et du reboot lors de possible crash, vous pouvez aller plus loin avec Keymetrics, qui n'est gratuit pour qu'un seul projet, mais si vous avez plusieur il faudra utiliser aussi sont porte monaie
+   Il existe différents outil comme [respawn](https://github.com/mafintosh/respawn) et PM2 qui permet de gérer et lancer plusieur projets nodejs, avec un système de log et du reboot lors de possible crash, vous pouvez aller plus loin avec Keymetrics, qui n'est gratuit pour qu'un seul projet
+   
+Pour PM2 il faut qu'il soit redemarré à chaque redemarrage du serveur
+
+```Shell
+pm2 startup systemd
+```
    
 ## Stream
 
