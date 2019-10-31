@@ -85,6 +85,12 @@ il faut pouvoir configurer notre projet simplement, voici un petit morceau code 
  npm install
  ```
  
+ si vous êtes sous linux, certain paquet npm a besoin du paquet ci-dessous pour pouvoir avoir la compilation du code source
+ 
+ ```shell
+ sudo apt install build-essential
+ ```
+ 
 ### Environnement Windows 10
  
 Nous avons la chance d'avoir sur windows le WSL, avoir la puissance de Linux sous Windows ce n'est plus un rêve mais bien une réalité
