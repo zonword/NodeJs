@@ -30,11 +30,16 @@ Ils l'ont fait confiance : Paypal, Ebay, Amazon, LinkedIN, Uber, Netflix, Spotif
 
 ### Astuce
 
-Uniquement sous Unix, vous pouvez demarrer le programme directement sans appelé Node, si votre programme commence comme ci-dessous
+Vous pouvez demarrer le programme directement sans appelé Node, si votre programme commence comme ci-dessous.
 
 ```JAVASCRIPT
 #!/usr/bin/env node
-'use strict';
+ ```
+ 
+ Le fait de mettre un shebang, lors de son exécution comme ci dessous il sauras que c'est avec node qu'il faut utiliser
+ 
+ ```Shell
+ ./monfichier.js 
  ```
  
  mais avant il faut le rendre executable par le systeme
@@ -42,6 +47,8 @@ Uniquement sous Unix, vous pouvez demarrer le programme directement sans appelé
  ```BATCH
  chmod +x monfichier.js
  ```
+ 
+Il n'est même plus necessaire de mettre une extension au fichier ^^, cette astuce est trés utilisé pour les application mis dans *.bin* à la racine de votre projet node, avec la commande **npm link** on va creer les liens utile pour que votre système ou il y'a npm installé pourra l'exécuté n'importe ou sur votre machine, comme npm est compatible à tout les OS, pas de soucis de compatibilité
 
 ## Installation   
 
