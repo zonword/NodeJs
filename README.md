@@ -288,8 +288,8 @@ pm2 startup systemd
    fs.createReadStream ouvre le fichier comme un flux, et non en le stockant en intégralité dans une zone mémoire, trés utile pour traiter des gros fichier en simultannée, attention le readFile n'est pas inutile, on peut l'utiliser quand on a besoin de faire des opérations ligne par ligne, readStream seras plus utile lors de la construction fichier, la copie, ou remplir une variable
 
 ```javascript
-var fs 	   = require('fs');
-var stream = fs.createReadStream('fichier.txt');
+import fs from 'fs"
+const stream = fs.createReadStream('fichier.txt');
 
 stream.on('data', (data) => {
    var chunck = data.toString();
@@ -308,9 +308,9 @@ stream.on('error', (error) => {
    fs.createWriteStream récupère les données, pipe est idéale pour les flux, il trouve tout sont utilité en sortie d'un flux ainsi qu'en entrée
 
 ```javascript
-var fs = require('fs');
-var readStream  = fs.createReadStream('IN.txt');
-var writeStream = fs.createWriteStream('OUT.txt');
+import fs from 'fs"
+let readStream  = fs.createReadStream('IN.txt');
+let writeStream = fs.createWriteStream('OUT.txt');
 
 readStream.pipe(writeStream);
 ```
@@ -326,7 +326,7 @@ La première méthode permet de partager au mieux la puissance de la machine ent
 La deuxième un process est démarré en mode master, il à pour role de dispatcher aux process forkés qui eux sont dédiés au traitement qui sont en mode worker
 
 ```javascript
-const recluster = require("cluster");
+import recluster from 'cluster'
 const os      = require("os");
 const fs      = require("fs");
 
