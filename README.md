@@ -133,6 +133,12 @@ ensuite dans tout les terminaux possible et imaginable il suffit de bash pour qu
  sudo apt install openssh-client
  ```
  
+ Installer node depuis windows
+ 
+ ```Shell
+ choco install nodejs
+ ```
+ 
 ## Developpement 
 
 Pour info une nouvelle bonne pratique viens d'arriver il faut utiliser *import* au lieu de *require* pour inclure vos librairie dans vos projet, cette pratique n'est casi pas respecté, mais elle seras le standard au temps prendre l'habitude maintenant
