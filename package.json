@@ -8,7 +8,7 @@
   "dependencies": {
     "chalk"           : "^2.3.2",
     "chalk-animation" : "^1.6.0",
-    "csv-parse"       : "^1.2.0",
+    "csv-parse"       : "^4.6.5",
     "dotenv"          : "^5.0.1",
     "draftlog"        : "^1.0.12",
     "fs"              : "0.0.1-security",
